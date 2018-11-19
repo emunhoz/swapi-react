@@ -1,0 +1,28 @@
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background: darken($bg, 8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+.sw-btn {
+  border: none;
+  border-radius: 90px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 16px 40px;
+  color: #fff;
+
+  &.sw-btn-primary {
+    @include button-bg(#cb2140);
+  }
+
+  &.sw-btn-outline {
+    @include button-bg(#0c1f2c);
+    border: 1px solid white;
+  }
+}

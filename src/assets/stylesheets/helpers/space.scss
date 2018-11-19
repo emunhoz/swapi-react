@@ -1,0 +1,22 @@
+$sizes: (xs, sm, md, lg);
+$directions: (top, right, bottom, left);
+$spacers: (
+  xs: 5px,
+  sm: 10px,
+  md: 20px,
+  lg: 40px
+);
+
+@each $size in $sizes {
+  @each $direction in $directions {
+    .sw-#{$size}-margin-#{$direction} {
+      margin-#{$direction}: map-get($spacers, $size) !important;
+    }
+  }
+}
+
+@each $direction in $directions {
+  .no-margin-#{$direction} {
+    margin-#{$direction}: 0 !important;
+  }
+}
