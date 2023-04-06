@@ -16,7 +16,7 @@ class App extends Component {
 				population: '300.254.10',
 				climate: 'Lorem',
 				terrain: 'Dolor sit',
-				films: [ 'https://swapi.co/api/films/5/' ]
+				films: [ 'https://swapi.dev/api/films/5/' ]
 			}
 		};
 
@@ -25,7 +25,7 @@ class App extends Component {
 
 	loadPlanets = async (planet) => {
 		this.setState({ loader: true });
-		await fetch(`https://swapi.co/api/planets/${planet}`)
+		await fetch(`https://swapi.dev/api/planets/${planet}`)
 			.then((response) => response.json())
 			.then((result) => {
 				this.setState({ planet: result, mock: false, blur: true, loader: false });
